@@ -7,19 +7,13 @@ namespace project1
 {
     class Program
     {
-        static void Main(string[] args)
+        static void enterPlayers(string _dataFilePath)
         {
-            string dataFilePath = @"..\..\..\playerDataFile.dat";
-
-            //Player p1 = new Player("Dwayne Haskins","Ohio St.", "Quarterback" , 24600100, 1 );
-            //Player p2 = new Player("Josh Jacobs", "Alabama", "Quarterback", 24500100, 1);
-            List<Player> players;// = new List<Player>();
-
-            TextReader tReader = new StreamReader(dataFilePath);
+            TextReader tReader = new StreamReader(_dataFilePath);
             string serializedData = tReader.ReadToEnd();
             tReader.Close();
 
-
+            List<Player> players;// = new List<Player>();
 
             players = JsonConvert.DeserializeObject<List<Player>>(serializedData);
 
@@ -60,11 +54,20 @@ namespace project1
             } while (sentienniel != ConsoleKey.Escape);
 
             serializedData = JsonConvert.SerializeObject(players, Formatting.Indented);
-            TextWriter tWriter = new StreamWriter(dataFilePath);
+            TextWriter tWriter = new StreamWriter(_dataFilePath);
             tWriter.Write(serializedData);
 
             tWriter.Close();
-            
+        }
+        static void Main(string[] args)
+        {
+            string dataFilePath = @"..\..\..\playerDataFile.dat";
+
+            if(args.Length > 0 && args[0] == "-addNew")
+                enterPlayers(dataFilePath);
+
+
+
 
 
         }

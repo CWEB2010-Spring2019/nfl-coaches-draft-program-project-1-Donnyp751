@@ -28,7 +28,7 @@
     "name": "Nick Bosa"
   },
   {
-    "position": "DB",
+    "position": "Defensive-Back",
     "pick": 1,
     "price": 24000000,
     "state": "LSU",
@@ -54,5 +54,229 @@
     "price": 23000000,
     "state": "Alabama",
     "name": "Jonah Williams"
+  },
+  {
+    "position": "Quarterback",
+    "pick": 2,
+    "price": 20300100,
+    "state": "Oklahoma",
+    "name": "Kyler Murray"
+  },
+  {
+    "position": "Running Back",
+    "pick": 2,
+    "price": 19890200,
+    "state": "Alabama",
+    "name": "Damien Harris"
+  },
+  {
+    "position": "Wide-Receiver",
+    "pick": 2,
+    "price": 21900300,
+    "state": "Ole Miss",
+    "name": "A.J. Brown"
+  },
+  {
+    "position": "Defensive Lineman",
+    "pick": 2,
+    "price": 22000000,
+    "state": "Alabama",
+    "name": "Quinnen Williams"
+  },
+  {
+    "position": "Defensive-Back",
+    "pick": 2,
+    "price": 22500800,
+    "state": "Georgia",
+    "name": "Deandre Baker"
+  },
+  {
+    "position": "Tight Ends",
+    "pick": 2,
+    "price": 21000800,
+    "state": "Alabama",
+    "name": "Iry Smith"
+  },
+  {
+    "position": "Line-Backer's",
+    "pick": 2,
+    "price": 19000590,
+    "state": "LSU",
+    "name": "Devin White"
+  },
+  {
+    "position": "Offensive Tackles",
+    "pick": 2,
+    "price": 20000000,
+    "state": "Ole Miss",
+    "name": "Greg Little"
+  },
+  {
+    "position": "Quarterback",
+    "pick": 3,
+    "price": 17420300,
+    "state": "Missouri",
+    "name": "Drew Lock"
+  },
+  {
+    "position": "Running Back",
+    "pick": 3,
+    "price": 18700800,
+    "state": "Iowa St.",
+    "name": "David Montgomery"
+  },
+  {
+    "position": "Wide-Receiver",
+    "pick": 3,
+    "price": 19300230,
+    "state": "Arizona St. ",
+    "name": "N'Keal Harry"
+  },
+  {
+    "position": "Defensive Lineman",
+    "pick": 3,
+    "price": 16000000,
+    "state": "Houston",
+    "name": "Ed Oliver"
+  },
+  {
+    "position": "Defensive-Back",
+    "pick": 3,
+    "price": 20000100,
+    "state": "Washington",
+    "name": "Byron Murphy"
+  },
+  {
+    "position": "Tight Ends",
+    "pick": 3,
+    "price": 17499233,
+    "state": "Iowa",
+    "name": "T.J. Hockenson"
+  },
+  {
+    "position": "Line-Backer's",
+    "pick": 3,
+    "price": 18000222,
+    "state": "Miss. State",
+    "name": "Montez Sweat"
+  },
+  {
+    "position": "Offensive Tackles",
+    "pick": 3,
+    "price": 19400000,
+    "state": "Oklahoma",
+    "name": "Cody Ford"
+  },
+  {
+    "position": "Quarterback",
+    "pick": 4,
+    "price": 13100145,
+    "state": "Duke",
+    "name": "Daniel Jones"
+  },
+  {
+    "position": "Running Back",
+    "pick": 4,
+    "price": 15000000,
+    "state": "Oklahoma St.",
+    "name": "Justice Hill"
+  },
+  {
+    "position": "Wide-Receiver",
+    "pick": 4,
+    "price": 13400230,
+    "state": "Oklahoma",
+    "name": "Marquise Brown"
+  },
+  {
+    "position": "Defensive Lineman",
+    "pick": 4,
+    "price": 18000000,
+    "state": "Miss. State",
+    "name": "Jeffery Simmons"
+  },
+  {
+    "position": "Defensive-Back",
+    "pick": 4,
+    "price": 16000200,
+    "state": "Alabama",
+    "name": "Deionte Thompson"
+  },
+  {
+    "position": "Tight Ends",
+    "pick": 4,
+    "price": 27900200,
+    "state": "Standford",
+    "name": "Kaden Smith"
+  },
+  {
+    "position": "Line-Backer's",
+    "pick": 4,
+    "price": 12999999,
+    "state": "Alabama",
+    "name": "Mack Wilson"
+  },
+  {
+    "position": "Offensive Tackles",
+    "pick": 4,
+    "price": 16200700,
+    "state": "Florida",
+    "name": "Jawaan Taylor"
+  },
+  {
+    "position": "Quarterback",
+    "pick": 5,
+    "price": 10300000,
+    "state": "West Virginia",
+    "name": "Will Grier"
+  },
+  {
+    "position": "Running Back",
+    "pick": 5,
+    "price": 11600400,
+    "state": "FAU",
+    "name": "Devin Singletary"
+  },
+  {
+    "position": "Wide-Receiver",
+    "pick": 5,
+    "price": 10000000,
+    "state": "NC State",
+    "name": "Kelvin Harmon"
+  },
+  {
+    "position": "Defensive Lineman",
+    "pick": 5,
+    "price": 13000000,
+    "state": "Clemson",
+    "name": "Clelin Ferrell"
+  },
+  {
+    "position": "Defensive-Back",
+    "pick": 5,
+    "price": 11899999,
+    "state": "Penn State",
+    "name": "Amani Oruwariye"
+  },
+  {
+    "position": "Tight Ends",
+    "pick": 5,
+    "price": 14900333,
+    "state": "San Jose St.",
+    "name": "Josh Oliver"
+  },
+  {
+    "position": "Line-Backer's",
+    "pick": 5,
+    "price": 10000100,
+    "state": "Michigan",
+    "name": "Devin Bush"
+  },
+  {
+    "position": "Offensive Tackles",
+    "pick": 5,
+    "price": 15900000,
+    "state": "West Virginia",
+    "name": "Yodny Cajuste"
   }
 ]
