@@ -1,0 +1,16 @@
+[
+  {
+    "position": "Quarterback",
+    "pick": 1,
+    "price": 24600100,
+    "state": "(Ohio St.)",
+    "name": "Dwayne Haskins"
+  },
+  {
+    "position": "Quarterback",
+    "pick": 1,
+    "price": 24500100,
+    "state": "(Alabama)",
+    "name": "Josh Jacobs"
+  }
+]
