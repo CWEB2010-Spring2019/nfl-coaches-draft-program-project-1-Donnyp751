@@ -7,17 +7,52 @@
     "name": "Dwayne Haskins"
   },
   {
-    "position": "Quarterback",
+    "position": "Running Back",
     "pick": 1,
     "price": 24500100,
     "state": "Alabama",
     "name": "Josh Jacobs"
   },
   {
-    "position": "Quarterback",
+    "position": "Wide-Receiver",
     "pick": 1,
     "price": 23400000,
     "state": "Ole Miss",
     "name": "D.K. Metcalf"
+  },
+  {
+    "position": "Defensive Lineman",
+    "pick": 1,
+    "price": 26200300,
+    "state": "Ohio St.",
+    "name": "Nick Bosa"
+  },
+  {
+    "position": "DB",
+    "pick": 1,
+    "price": 24000000,
+    "state": "LSU",
+    "name": "Greedy Williams"
+  },
+  {
+    "position": "Tight Ends",
+    "pick": 1,
+    "price": 27800900,
+    "state": "Iowa",
+    "name": "Noah Fant"
+  },
+  {
+    "position": "Line-Backer's",
+    "pick": 1,
+    "price": 22900300,
+    "state": "Kentucky",
+    "name": "Josh Allen"
+  },
+  {
+    "position": "Offensive Tackles",
+    "pick": 1,
+    "price": 23000000,
+    "state": "Alabama",
+    "name": "Jonah Williams"
   }
 ]
