@@ -7,6 +7,8 @@ namespace project1
 {
     class Program
     {
+
+
         static void enterPlayers(string _dataFilePath)
         {
             TextReader tReader = new StreamReader(_dataFilePath);
@@ -59,6 +61,15 @@ namespace project1
 
             tWriter.Close();
         }
+        static List<Player> readPlayersFile(string path)
+        {
+            using (TextReader tReader = new StreamReader(path))
+            {
+                string serializedData = tReader.ReadToEnd();
+                return JsonConvert.DeserializeObject<List<Player>>(serializedData); //return the list of player objects from the file
+            }
+        }
+
         static void Main(string[] args)
         {
             string dataFilePath = @"..\..\..\playerDataFile.dat";
@@ -66,12 +77,18 @@ namespace project1
             if(args.Length > 0 && args[0] == "-addNew")
                 enterPlayers(dataFilePath);
 
+            List<Player> players = readPlayersFile(dataFilePath);
 
+            ConsoleDisplayManager consoleManager = new ConsoleDisplayManager(players);
 
+            
 
 
         }
+
+        
     }
+
 
 
 }
