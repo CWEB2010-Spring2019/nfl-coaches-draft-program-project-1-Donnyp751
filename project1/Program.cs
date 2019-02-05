@@ -18,7 +18,7 @@ namespace project1
             List<Player> players;// = new List<Player>();
 
             players = JsonConvert.DeserializeObject<List<Player>>(serializedData);
-
+            
             ConsoleKey sentienniel = ConsoleKey.A;
 
             foreach (Player p in players)
@@ -80,9 +80,9 @@ namespace project1
             List<Player> players = readPlayersFile(dataFilePath);
 
             ConsoleDisplayManager consoleManager = new ConsoleDisplayManager(players);
+            consoleManager.Run();
 
-            
-
+            Console.ReadKey();
 
         }
 

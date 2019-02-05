@@ -1,6 +1,9 @@
 {
   "profiles": {
     "project1": {
+      "commandName": "Project"
+    },
+    "AddNew": {
       "commandName": "Project",
       "commandLineArgs": "-addNew"
     }

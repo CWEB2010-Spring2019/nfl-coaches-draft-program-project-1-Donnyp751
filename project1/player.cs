@@ -11,6 +11,7 @@ namespace project1
         public int price { get; set; }
         public string state { get; set; }
         public string name { get; set; }
+ 
 
         public Player(string _name, string _state, string _position, int price, int _pick)
         {
@@ -25,6 +26,14 @@ namespace project1
             
         }
 
+        public List<string> getDisplayableList()
+        {
+            List<string> dispList = new List<string>();
+            dispList.Add(this.name);
+            dispList.Add(this.state);
+            dispList.Add(this.price.ToString());
+            return dispList;
+        }
         public override string ToString()
         {
             return "name:" + this.name + "  position: " + this.position + "  state: " + this.state + "   price: " + this.price + "   pick: " + this.pick; ;
