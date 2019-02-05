@@ -82,8 +82,6 @@ namespace project1
             ConsoleDisplayManager consoleManager = new ConsoleDisplayManager(players);
             consoleManager.Run();
 
-            Console.ReadKey();
-
         }
 
         

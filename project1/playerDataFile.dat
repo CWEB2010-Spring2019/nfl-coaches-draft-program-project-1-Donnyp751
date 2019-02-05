@@ -2,7 +2,7 @@
   {
     "position": "Quarterback",
     "pick": 1,
-    "price": 24600100,
+    "price": 26400100,
     "state": "Ohio St.",
     "name": "Dwayne Haskins"
   },
@@ -278,12 +278,5 @@
     "price": 15900000,
     "state": "West Virginia",
     "name": "Yodny Cajuste"
-  },
-  {
-    "position": "5",
-    "pick": 5,
-    "price": 5,
-    "state": "5",
-    "name": "5"
   }
 ]

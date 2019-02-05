@@ -7,17 +7,43 @@ namespace project1
 {
     class ConsoleDisplayManager
     {
+        private struct position
+        {
+            public int x;
+            public int y;
+
+            public position(int _x = 0, int _y = 0)
+            {
+                x = _x;
+                y = _y;
+            }
+        }
+
+        private enum states
+        {
+            SelectingPicks,
+            RemovingPicks,
+            ReviewingPicks,
+            Shutdown
+        }
+
         private int rows{ get; set; }
         private int columns { get; set; }
         private int placeHolderWidth = 20;
         private int placeHolderHeight = 4;
         private List<string> positions;
         private List<string> pickValues;
+        private List<Player> players;
+        private List<Player> takenPlayers;
+        private Player[,] displayPlaceHolders;
 
-        public ConsoleDisplayManager(List<Player>players)
+        public ConsoleDisplayManager(List<Player> players)
         {
+            this.players = players;
             rows = 6;
             columns = 9;
+            displayPlaceHolders = new Player[5,8]; //5 wide 8 tall table for holding players + labels
+            takenPlayers = new List<Player>();
             positions = new List<string>()
             {
                 "Quarterback",
@@ -64,7 +90,7 @@ namespace project1
 
         }
 
-        public void WriteSingleEntry(List<string> text,Tuple<int,int> entryIndex, ConsoleColor foregroundColor = ConsoleColor.White, ConsoleColor backgroundColor = ConsoleColor.Black, int startingOffset=0)
+        private void WriteSingleEntry(List<string> text, position entryIndex, ConsoleColor foregroundColor = ConsoleColor.White, ConsoleColor backgroundColor = ConsoleColor.Black, int startingOffset=0)
         {
             int offset = 0;
             Console.ForegroundColor = foregroundColor;
@@ -78,16 +104,108 @@ namespace project1
                     bufferOffset = (placeHolderWidth - len) / 2;
                 }
 
-                Console.SetCursorPosition(entryIndex.Item1 + bufferOffset, entryIndex.Item2 + startingOffset + offset++);
+                Console.SetCursorPosition(entryIndex.x + bufferOffset, entryIndex.y + startingOffset + offset++);
                 Console.Write(t);
             }
         }
 
-        private void RunInteractiveTable()
+        private void DisplayPlayers(position currentPosition)
         {
+            for (int rowIndex = 0; rowIndex < rows-1; rowIndex++)
+            {
+                for (int colIndex = 0; colIndex < columns-1; colIndex++)
+                {
+                    Player player = displayPlaceHolders[rowIndex, colIndex];
+                    bool AlreadySelected = takenPlayers.Contains(player);
+                    ConsoleColor color = AlreadySelected ? ConsoleColor.DarkGreen : ConsoleColor.White;
+
+                    WriteSingleEntry(player.getDisplayableList(), GetIndexPosition(rowIndex+1, colIndex+1), foregroundColor:color);
+
+                }
+            }
 
         }
+        private states SelectingPicks()
+        {
+            position currentIndex = new position();
+            position nextIndex = new position();
+            ConsoleKey key;
+            do
+            {
+                DisplayPlayers(currentIndex);
+                key = Console.ReadKey().Key;
+                switch (key)
+                {
+                    case ConsoleKey.Enter:
 
+                        break;
+
+                    case ConsoleKey.Backspace:
+
+                        break;
+
+                    case ConsoleKey.DownArrow:
+
+                        break;
+
+                    case ConsoleKey.UpArrow:
+
+                        break;
+                    case ConsoleKey.LeftArrow:
+
+                        break;
+
+                    case ConsoleKey.RightArrow:
+
+                        break;
+
+                    case ConsoleKey.Escape:
+                        return states.Shutdown;
+
+                    default:
+                        continue;
+                }
+
+
+            } while (true);
+
+        }
+        private void RunInteractiveTable()
+        {
+            states state = states.SelectingPicks;
+
+            bool running = true;
+            do
+            {
+                switch (state)
+                {
+                    case states.SelectingPicks:
+                        state = SelectingPicks();
+                        break;
+                    case states.RemovingPicks:
+                        break;
+                    case states.ReviewingPicks:
+                        break;
+                    case states.Shutdown:
+                        running = false;
+                        break;
+                    default:
+                        throw new ArgumentOutOfRangeException();
+                }
+
+
+
+
+            } while (running);
+        }
+
+        private void sortPlayers()
+        {
+            foreach (Player player in players)
+            {
+                displayPlaceHolders[player.pick - 1, positions.IndexOf(player.position)] = player;
+            }
+        }
         private void labelTable()
         {
             var test = new List<string>();
@@ -111,13 +229,13 @@ namespace project1
             }
         }
 
-        private Tuple<int, int> GetIndexPosition(int row, int column)
+        private position GetIndexPosition(int row, int column)
         {
             int rightDis = placeHolderWidth* row;
             int DownDis = placeHolderHeight * column;
 
 
-            Tuple<int, int> pos =  new Tuple<int, int>(rightDis+1, DownDis+1);
+            position pos =  new position(rightDis+1, DownDis+1);
             return pos;
         }
         public void Run()
@@ -125,9 +243,9 @@ namespace project1
             Console.CursorVisible = false;
             WriteEmptyTable();
             labelTable();
+            sortPlayers();
 
             RunInteractiveTable();
-
         }
 
         

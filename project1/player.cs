@@ -31,7 +31,8 @@ namespace project1
             List<string> dispList = new List<string>();
             dispList.Add(this.name);
             dispList.Add(this.state);
-            dispList.Add(this.price.ToString());
+            dispList.Add(this.price.ToString("C0"));
+            
             return dispList;
         }
         public override string ToString()
