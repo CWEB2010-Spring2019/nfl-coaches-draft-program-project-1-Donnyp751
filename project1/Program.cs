@@ -5,26 +5,22 @@ using Newtonsoft.Json;
 
 namespace project1
 {
-    class Program
+    internal class Program
     {
-
-
-        static void enterPlayers(string _dataFilePath)
+        //This function was made to speed up the entry of the data from the image we were given into json.
+        private static void enterPlayers(string _dataFilePath)
         {
             TextReader tReader = new StreamReader(_dataFilePath);
             string serializedData = tReader.ReadToEnd();
             tReader.Close();
 
-            List<Player> players;// = new List<Player>();
+            List<Player> players; // = new List<Player>();
 
             players = JsonConvert.DeserializeObject<List<Player>>(serializedData);
-            
+
             ConsoleKey sentienniel = ConsoleKey.A;
 
-            foreach (Player p in players)
-            {
-                Console.WriteLine(p);
-            }
+            foreach (Player p in players) Console.WriteLine(p);
 
             do
             {
@@ -35,7 +31,6 @@ namespace project1
                 {
                     player = new Player(Console.ReadLine(), Console.ReadLine(), Console.ReadLine(),
                         Convert.ToInt32(Console.ReadLine()), Convert.ToInt32(Console.ReadLine()));
-
                 }
                 catch
                 {
@@ -48,7 +43,7 @@ namespace project1
                 if (Console.ReadKey().Key == ConsoleKey.UpArrow)
                 {
                     players.Add(player);
-                    Console.WriteLine("Player Added: total players = " + players.Count.ToString() + "\n");
+                    Console.WriteLine("Player Added: total players = " + players.Count + "\n");
                 }
 
                 Console.WriteLine("press escape to quit, or any other key to continue adding players");
@@ -61,32 +56,29 @@ namespace project1
 
             tWriter.Close();
         }
-        static List<Player> readPlayersFile(string path)
+
+        private static List<Player> readPlayersFile(string path)
         {
             using (TextReader tReader = new StreamReader(path))
             {
                 string serializedData = tReader.ReadToEnd();
-                return JsonConvert.DeserializeObject<List<Player>>(serializedData); //return the list of player objects from the file
+                return
+                    JsonConvert.DeserializeObject<List<Player>>(
+                        serializedData); //return the list of player objects from the file
             }
         }
 
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             string dataFilePath = @"..\..\..\playerDataFile.dat";
 
-            if(args.Length > 0 && args[0] == "-addNew")
+            if (args.Length > 0 && args[0] == "-addNew")
                 enterPlayers(dataFilePath);
 
             List<Player> players = readPlayersFile(dataFilePath);
 
             ConsoleDisplayManager consoleManager = new ConsoleDisplayManager(players);
             consoleManager.Run();
-
         }
-
-        
     }
-
-
-
 }
